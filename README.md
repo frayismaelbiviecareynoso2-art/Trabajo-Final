@@ -6,11 +6,11 @@
 - `styles.css`: estilos.
 - `public.js`: formulario público.
 - `admin.js`: login, búsqueda, filtros y panel.
-- `seed-data.js`: 50 registros ficticios precargados.
+- `seed-data.js`: 50 registros 
 
 ## Credenciales del prototipo
 - Usuario: `admin`
-- Contraseña: `Merad2026!`
+- Contraseña: `12345678!`
 
 ## Sobre los teléfonos
 Se usan números únicos con formato dominicano (809/829/849) y bloque `555-01xx` para que parezcan reales sin pretender corresponder a clientes reales.
