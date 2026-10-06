@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MERAD | Administración</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section id="loginView" class="login-page">
+  <div class="card login-shell">
+    <div class="login-art">
+      <h1>Área administrativa</h1>
+      <p>Panel privado del prototipo MERAD para visualizar solicitudes y datos de demostración.</p>
+    </div>
+    <div class="login-box">
+      <div class="kicker" style="color:var(--rose)">ACCESO RESTRINGIDO</div>
+      <h2>Iniciar sesión</h2>
+      <p class="sub">Ingresa las credenciales del administrador.</p>
+      <form id="loginForm">
+        <div class="field"><label>Usuario</label><div class="control">♙ <input id="username" autocomplete="username" required></div></div>
+        <div class="field"><label>Contraseña</label><div class="control">● <input id="password" type="password" autocomplete="current-password" required></div></div>
+        <div class="error-msg" id="loginError"></div>
+        <button class="btn btn-primary" style="width:100%;padding:15px">Entrar al panel</button>
+      </form>
+      <p class="login-note">Este login sirve para ocultar los datos dentro de la interfaz del prototipo. Al estar publicado en GitHub Pages, no sustituye la seguridad real de un servidor.</p>
+      <a href="index.html" style="margin-top:16px;color:var(--rose);font-weight:700">← Volver a la web pública</a>
+    </div>
+  </div>
+</section>
+
+<section id="adminView" class="admin-layout hidden">
+  <aside class="sidebar">
+    <div class="brand">MERAD<small>SALÓN DE BELLEZA</small></div>
+    <nav>
+      <a class="side-link active" href="#panel">▦ Panel privado</a>
+      <a class="side-link" href="index.html">↗ Web pública</a>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-top">
+      <div><span class="badge-private">🔒 Sesión administrativa</span><h1>Panel de solicitudes</h1><p>Los registros solo se muestran después del inicio de sesión.</p></div>
+      <button class="btn btn-soft" id="logoutBtn">Cerrar sesión</button>
+    </div>
+
+    <div class="stats">
+      <div class="card stat"><small>Total</small><strong id="statTotal">0</strong></div>
+      <div class="card stat"><small>Pendientes</small><strong id="statPending">0</strong></div>
+      <div class="card stat"><small>Confirmadas</small><strong id="statConfirmed">0</strong></div>
+      <div class="card stat"><small>Completadas</small><strong id="statCompleted">0</strong></div>
+    </div>
+
+    <section class="card dashboard" id="panel">
+      <h2>Base de datos de demostración</h2>
+      <p class="sub">50 registros ficticios + solicitudes creadas desde la web pública en este navegador.</p>
+      <div class="toolbar">
+        <div class="search"><input id="search" type="search" placeholder="Buscar por nombre, teléfono, servicio o estado"></div>
+        <select class="filter" id="statusFilter"><option value="">Todos los estados</option><option>Pendiente</option><option>Confirmada</option><option>Completada</option><option>Cancelada</option></select>
+        <button class="btn btn-soft" id="resetBtn">Restaurar demo</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Cliente</th><th>Teléfono</th><th>Servicio</th><th>Fecha</th><th>Hora</th><th>Estado</th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="table-footer">
+        <span>Todos los nombres y números precargados son ficticios.</span>
+        <div class="pager"><button id="prev">←</button><span id="pageInfo">Página 1</span><button id="next">→</button></div>
+      </div>
+    </section>
+  </main>
+</section>
+
+<div class="toast" id="toast"></div>
+<script src="seed-data.js"></script>
+<script>
+window.MERAD_LOGIN={user:"admin",passwordHash: + ADMIN_HASH + r};
+</script>
+<script src="admin.js"></script>
+</body>
+</html>

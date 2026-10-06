@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MERAD | Salón de Belleza</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="container topbar">
+  <a class="brand" href="index.html">MERAD<small>SALÓN DE BELLEZA</small></a>
+  <div class="nav-actions"><a class="btn btn-soft" href="admin.html">Acceso administrativo</a></div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div><div class="kicker">MERAD · SALÓN DE BELLEZA</div><h1>Bienvenida a MERAD</h1><p>Solicita tu cita de manera rápida y sencilla. La solicitud quedará pendiente hasta que el salón confirme la disponibilidad.</p></div>
+  </section>
+
+  <section class="card booking">
+    <div>
+      <h2>Solicitar una cita</h2><p class="sub">Completa la información. Los datos enviados se guardan únicamente en este navegador para fines de demostración.</p>
+      <form id="bookingForm">
+        <div class="field"><label>Nombre completo <b>*</b></label><div class="control">♙ <input name="name" required placeholder="Ej. Ana Martínez"></div></div>
+        <div class="field"><label>Número de teléfono <b>*</b></label><div class="control">☎ <input name="phone" required placeholder="809-555-0123"></div></div>
+        <div class="field"><label>Servicio <b>*</b></label><div class="control">✦ <select name="service" required><option value="">Selecciona un servicio</option><option>Manicura</option><option>Pedicura</option><option>Corte y secado</option><option>Lavado y secado</option><option>Tinte</option><option>Maquillaje</option><option>Peinado</option></select></div></div>
+        <div class="grid2">
+          <div class="field"><label>Fecha preferida <b>*</b></label><div class="control">▣ <input type="date" name="date" required></div></div>
+          <div class="field"><label>Hora preferida <b>*</b></label><div class="control">◷ <select name="time" required><option value="">Selecciona</option><option>09:00 a. m.</option><option>10:00 a. m.</option><option>11:00 a. m.</option><option>12:00 p. m.</option><option>02:00 p. m.</option><option>03:00 p. m.</option><option>04:00 p. m.</option><option>05:00 p. m.</option></select></div></div>
+        </div>
+        <div class="field"><label>Mensaje adicional</label><div class="control">▤ <textarea name="message" rows="3" placeholder="Detalle opcional"></textarea></div></div>
+        <button class="btn btn-primary" style="width:100%;padding:16px">➤ Enviar solicitud</button>
+      </form>
+    </div>
+    <aside class="confirm">
+      <div class="check">✓</div><h2>Solicitud de cita</h2>
+      <p class="sub" id="confirmText">Al enviar el formulario verás aquí un resumen.</p>
+      <div class="status">La cita queda pendiente de confirmación.</div>
+      <p class="sub">Los registros administrativos no son visibles en esta página pública.</p>
+    </aside>
+  </section>
+
+  <section class="info-strip">
+    <article class="card info"><strong>1. Envía la solicitud</strong><p>Selecciona servicio, fecha y hora preferida.</p></article>
+    <article class="card info"><strong>2. Queda pendiente</strong><p>La solicitud no equivale a una cita confirmada.</p></article>
+    <article class="card info"><strong>3. Confirmación</strong><p>El salón verificaría disponibilidad antes de aprobarla.</p></article>
+  </section>
+</main>
+<footer class="container">Prototipo académico MERAD · Los registros internos de demostración están separados del área pública.</footer>
+<div class="toast" id="toast"></div>
+<script src="public.js"></script>
+</body>
+</html>
